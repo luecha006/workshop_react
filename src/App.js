@@ -1,31 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Routing from './routes';
+import Navbar from './Component/Navbar';
 import './App.css';
 
-function App() {
+const App = (props) => {
+  const [text, setText] = React.useState('React Application');
   return (
-    <div className="my-app">
-      <nav className="navbar is-light" role="navigation" aria-label="main navigation">
-        <div className="container">
-          <div className="navbar-brand">
-            <a className="navbar-item" href="https://devahoy.com">
-              <img src={process.env.PUBLIC_URL + '/images/devahoy-text-logo.png'} alt="DEVAHOY LOGO" width="112" height="28" />
-            </a>
-          </div>
-          <div className="navbar-menu">
-            <div className="navbar-end">
-              <NavLink exact="true" to="/" >Home</NavLink>
-              <NavLink to="/posts">Posts</NavLink>
-              <NavLink to="/projects">Projects</NavLink>
-              <NavLink to="/about" >About</NavLink>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <Routing />
-    </div>
+    <>
+      <h1>Hello {text}</h1>
+    </>
+    // <Navbar />
   );
 }
 
